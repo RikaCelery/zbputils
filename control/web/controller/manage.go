@@ -298,6 +298,7 @@ func GetAllPlugin(context *gin.Context) {
 			Banner:         "https://gitcode.net/u011570312/zbpbanner/-/raw/main/" + manager.Service + ".png",
 			PluginStatus:   manager.IsEnabledIn(d.GroupID),
 			ResponseStatus: control.CanResponse(d.GroupID),
+			DisableDefault: manager.Options.DisableOnDefault,
 		}
 		pluginVoList = append(pluginVoList, p)
 		return true
@@ -347,6 +348,7 @@ func GetPlugin(context *gin.Context) {
 		Banner:         "https://gitcode.net/u011570312/zbpbanner/-/raw/main/" + con.Service + ".png",
 		PluginStatus:   con.IsEnabledIn(d.GroupID),
 		ResponseStatus: control.CanResponse(d.GroupID),
+		DisableDefault: con.Options.DisableOnDefault,
 	}
 	context.JSON(http.StatusOK, types.Response{
 		Code:         0,

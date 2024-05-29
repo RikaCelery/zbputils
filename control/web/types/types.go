@@ -159,6 +159,7 @@ type PluginVo struct {
 	Banner         string `json:"banner"`         // 头像
 	PluginStatus   bool   `json:"pluginStatus"`   // 插件状态,false=禁用,true=启用
 	ResponseStatus bool   `json:"responseStatus"` // 响应状态, false=沉默,true=响应
+	DisableDefault bool   `json:"disableDefault"` // 是否默认启用, false=启用, true=不启用
 }
 
 // RequestVo 请求返回
