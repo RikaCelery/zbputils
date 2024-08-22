@@ -4,6 +4,7 @@ import (
 	"image"
 	"os"
 	"runtime"
+	"sort"
 	"strings"
 	"sync"
 	"time"
@@ -79,11 +80,18 @@ func drawservicesof(gid int64) (imgs []image.Image, err error) {
 		}
 		return true
 	})
+	columns := 8
 	// 分页
-	if len(pluginlist) < lnperpg*3 {
+	if len(pluginlist) < lnperpg*columns {
 		// 如果单页显示数量超出了总数量
-		lnperpg = math.Ceil(len(pluginlist), 3)
+		lnperpg = math.Ceil(len(pluginlist), columns)
 	}
+	sort.Slice(pluginlist, func(i, j int) bool {
+		if pluginlist[i].status == pluginlist[j].status {
+			return pluginlist[i].name < pluginlist[j].name
+		}
+		return pluginlist[i].status && !pluginlist[j].status
+	})
 	if titlecache == nil {
 		titlecache, err = (&rendercard.Title{
 			Line:          lnperpg,
@@ -204,7 +212,7 @@ func drawservicesof(gid int64) (imgs []image.Image, err error) {
 	}
 
 	wg := sync.WaitGroup{}
-	cardnum := lnperpg * 3
+	cardnum := lnperpg * columns
 	page := math.Ceil(len(pluginlist), cardnum)
 	imgs = make([]image.Image, page)
 	x, y := 30+2, 30+300+30+6+4
@@ -215,7 +223,7 @@ func drawservicesof(gid int64) (imgs []image.Image, err error) {
 			fullpageshadow.DrawRoundedRectangle(float64(x), float64(y), 384-4, 256-4, 0)
 			fullpageshadow.Fill()
 			x += 384 + 30
-			if (i+1)%3 == 0 {
+			if (i+1)%columns == 0 {
 				x = 30 + 2
 				y += 256 + 30
 			}
@@ -235,7 +243,7 @@ func drawservicesof(gid int64) (imgs []image.Image, err error) {
 					shadow.DrawRoundedRectangle(float64(x), float64(y), 384-4, 256-4, 0)
 					shadow.Fill()
 					x += 384 + 30
-					if (i+1)%3 == 0 {
+					if (i+1)%columns == 0 {
 						x = 30 + 2
 						y += 256 + 30
 					}
@@ -250,7 +258,7 @@ func drawservicesof(gid int64) (imgs []image.Image, err error) {
 			for i := 0; i < math.Min(cardnum, len(pluginlist)-cardnum*l); i++ {
 				one.DrawImage(cardlist[(cardnum*l)+i], x, y)
 				x += 384 + 30
-				if (i+1)%3 == 0 {
+				if (i+1)%columns == 0 {
 					x = 30
 					y += 256 + 30
 				}
