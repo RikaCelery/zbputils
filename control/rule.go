@@ -468,7 +468,7 @@ func init() {
 			}
 		})
 
-	zero.OnCommandGroup([]string{"服务列表", "service_list"}, zero.OnlyToMe).SetBlock(true).SecondPriority().
+	zero.OnCommandGroup([]string{"功能", "服务列表", "service_list"}, zero.OnlyToMe).SetBlock(true).SecondPriority().
 		Handle(func(ctx *zero.Ctx) {
 			gid := ctx.Event.GroupID
 			if gid == 0 {
