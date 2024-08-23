@@ -493,7 +493,7 @@ func init() {
 							w.WriteString("base64://")
 							encoder := base64.NewEncoder(base64.StdEncoding, w)
 							var opt jpeg.Options
-							opt.Quality = 70
+							opt.Quality = 40
 							if err1 := jpeg.Encode(encoder, imgs[i], &opt); err1 != nil {
 								err = err1
 								return
