@@ -494,6 +494,9 @@ func init() {
 							encoder := base64.NewEncoder(base64.StdEncoding, w)
 							var opt jpeg.Options
 							opt.Quality = 40
+							size := imgs[i].Bounds().Size()
+							factor := 0.4
+							imgs[i] = imgfactory.Size(imgs[i], int(float64(size.X)*factor), int(float64(size.Y)*factor)).Image()
 							if err1 := jpeg.Encode(encoder, imgs[i], &opt); err1 != nil {
 								err = err1
 								return
