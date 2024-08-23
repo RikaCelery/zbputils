@@ -80,7 +80,7 @@ func drawservicesof(gid int64) (imgs []image.Image, err error) {
 		}
 		return true
 	})
-	columns := 8
+	columns := 3
 	// 分页
 	if len(pluginlist) < lnperpg*columns {
 		// 如果单页显示数量超出了总数量
