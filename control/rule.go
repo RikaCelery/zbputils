@@ -438,7 +438,9 @@ func init() {
 				gid = -ctx.Event.UserID
 			}
 			// 处理插件帮助并且计算图像高
-			plugininfo := strings.Split(strings.Trim(service.String(), "\n"), "\n")
+			help := service.String()
+			help = strings.ReplaceAll(help, "{prefix}", zero.BotConfig.CommandPrefix)
+			plugininfo := strings.Split(strings.Trim(help, "\n"), "\n")
 			newplugininfo, err := rendercard.Truncate(glowsd, plugininfo, 1272-50, 38)
 			if err != nil {
 				ctx.SendChain(message.Text("ERROR: ", err))
