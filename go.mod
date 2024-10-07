@@ -79,4 +79,6 @@ replace modernc.org/sqlite => github.com/fumiama/sqlite3 v1.20.0-with-win386
 
 replace github.com/remyoudompheng/bigfft => github.com/fumiama/bigfft v0.0.0-20211011143303-6e0bfa3c836b
 
-replace github.com/FloatTech/rendercard => /Users/rikahil/GolandProjects/rendercard
+replace github.com/FloatTech/rendercard => github.com/RikaCelery/rendercard v0.0.0-20241007080904-2a7208f494dc
+
+//replace github.com/wdvxdr1123/ZeroBot => github.com/RikaCelery/ZeroBot
