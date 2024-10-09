@@ -177,8 +177,14 @@ func (e *Engine) OnFullMatchGroup(src []string, rules ...zero.Rule) *Matcher {
 	return (*Matcher)(e.en.OnFullMatchGroup(src, rules...).SetPriority(e.prio))
 }
 
-func (e *Engine) OnPattern(patterns ...zero.PatternSegment) *Matcher {
+func (e *Engine) OnPatternRule(patterns ...zero.PatternSegment) *Matcher {
 	return (*Matcher)(e.en.OnPattern(patterns...).SetPriority(e.prio))
+}
+
+func (e *Engine) OnPattern(patterns []zero.PatternSegment, rule ...zero.Rule) *Matcher {
+	matcher := e.en.OnPattern(patterns...)
+	matcher.Rules = append(matcher.Rules, rule...)
+	return (*Matcher)(matcher.SetPriority(e.prio))
 }
 
 // OnKeywordGroup 关键词触发器组
