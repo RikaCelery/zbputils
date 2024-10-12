@@ -22,6 +22,17 @@ var DefaultSingle = single.New(
 	}),
 )
 
+// NoHintSingle 不发送提示消息的反并发处理
+//
+//	按 qq 号反并发
+//	并发时不做任何处理
+var NoHintSingle = single.New(
+	single.WithKeyFn(func(ctx *zero.Ctx) int64 {
+		return ctx.Event.UserID
+	}),
+	single.WithPostFn[int64](func(_ *zero.Ctx) {}),
+)
+
 // defaultLimiterManager 默认限速器管理
 //
 //	每 10s 5次触发
