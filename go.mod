@@ -5,11 +5,11 @@ go 1.20
 require (
 	github.com/FloatTech/ZeroBot-Plugin-Webui v1.0.1-0.20230412164529-cfe878675931
 	github.com/FloatTech/floatbox v0.0.0-20240505082030-226ec6713e14
-	github.com/FloatTech/gg v1.1.2
+	github.com/FloatTech/gg v1.1.3
 	github.com/FloatTech/imgfactory v0.2.2-0.20230315152233-49741fc994f9
 	github.com/FloatTech/rendercard v0.0.10-0.20230223064326-45d29fa4ede9
 	github.com/FloatTech/sqlite v1.6.3
-	github.com/FloatTech/ttl v0.0.0-20230307105452-d6f7b2b647d1
+	github.com/FloatTech/ttl v0.0.0-20240716161252-965925764562
 	github.com/FloatTech/zbpctrl v1.6.1
 	github.com/RomiChan/syncx v0.0.0-20240418144900-b7402ffdebc7
 	github.com/RomiChan/websocket v1.4.3-0.20220227141055-9b2c6168c9c5
@@ -26,7 +26,7 @@ require (
 	github.com/swaggo/files v1.0.0
 	github.com/swaggo/gin-swagger v1.5.3
 	github.com/swaggo/swag v1.8.10
-	github.com/tidwall/gjson v1.14.4
+	github.com/tidwall/gjson v1.17.3
 	github.com/wdvxdr1123/ZeroBot v1.7.5-0.20240505070304-562ffeb33dcd
 )
 
@@ -62,7 +62,7 @@ require (
 	github.com/tidwall/pretty v1.2.0 // indirect
 	github.com/ugorji/go/codec v1.2.7 // indirect
 	golang.org/x/crypto v0.22.0 // indirect
-	golang.org/x/image v0.3.0 // indirect
+	golang.org/x/image v0.15.0 // indirect
 	golang.org/x/net v0.24.0 // indirect
 	golang.org/x/sys v0.19.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
@@ -79,6 +79,6 @@ replace modernc.org/sqlite => github.com/fumiama/sqlite3 v1.20.0-with-win386
 
 replace github.com/remyoudompheng/bigfft => github.com/fumiama/bigfft v0.0.0-20211011143303-6e0bfa3c836b
 
-replace github.com/FloatTech/rendercard => github.com/RikaCelery/rendercard v0.0.0-20241007080904-2a7208f494dc
+replace github.com/FloatTech/rendercard => github.com/RikaCelery/rendercard v0.0.0-20241013104539-0e51f5f22fc3
 
 replace github.com/wdvxdr1123/ZeroBot => github.com/RikaCelery/ZeroBot v0.0.0-20241007065829-44d6c88c217e
