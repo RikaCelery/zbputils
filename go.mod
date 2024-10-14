@@ -81,6 +81,6 @@ replace github.com/remyoudompheng/bigfft => github.com/fumiama/bigfft v0.0.0-202
 
 //replace github.com/FloatTech/rendercard => github.com/RikaCelery/rendercard v0.0.0-20241013104539-0e51f5f22fc3
 
-//replace github.com/wdvxdr1123/ZeroBot => github.com/RikaCelery/ZeroBot v0.0.0-20241007065829-44d6c88c217e
-replace github.com/wdvxdr1123/ZeroBot => /Users/rikahil/GolandProjects/ZeroBot
+replace github.com/wdvxdr1123/ZeroBot => github.com/RikaCelery/ZeroBot v0.0.0-20241014020704-a7a4f4e62b31
 
+//replace github.com/wdvxdr1123/ZeroBot => /Users/rikahil/GolandProjects/ZeroBot

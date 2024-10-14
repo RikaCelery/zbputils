@@ -131,73 +131,81 @@ func (e *Engine) On(typ string, rules ...zero.Rule) *Matcher {
 }
 
 // OnMessage 消息触发器
-func (e *Engine) OnMessage(rules ...zero.Rule) *Matcher { return e.On("message", rules...) }
+func (e *Engine) OnMessage(rules ...zero.Rule) *Matcher {
+	return e.On("message", rules...).AutoSetName(e)
+}
 
 // OnNotice 系统提示触发器
-func (e *Engine) OnNotice(rules ...zero.Rule) *Matcher { return e.On("notice", rules...) }
+func (e *Engine) OnNotice(rules ...zero.Rule) *Matcher {
+	return e.On("notice", rules...).AutoSetName(e)
+}
 
 // OnRequest 请求消息触发器
-func (e *Engine) OnRequest(rules ...zero.Rule) *Matcher { return e.On("request", rules...) }
+func (e *Engine) OnRequest(rules ...zero.Rule) *Matcher {
+	return e.On("request", rules...).AutoSetName(e)
+}
 
 // OnMetaEvent 元事件触发器
-func (e *Engine) OnMetaEvent(rules ...zero.Rule) *Matcher { return e.On("meta_event", rules...) }
+func (e *Engine) OnMetaEvent(rules ...zero.Rule) *Matcher {
+	return e.On("meta_event", rules...).AutoSetName(e)
+}
 
 // OnPrefix 前缀触发器
 func (e *Engine) OnPrefix(prefix string, rules ...zero.Rule) *Matcher {
-	return (*Matcher)(e.en.OnPrefix(prefix, rules...).SetPriority(e.prio))
+	return (*Matcher)(e.en.OnPrefix(prefix, rules...).SetPriority(e.prio)).AutoSetName(e)
 }
 
 // OnSuffix 后缀触发器
 func (e *Engine) OnSuffix(suffix string, rules ...zero.Rule) *Matcher {
-	return (*Matcher)(e.en.OnSuffix(suffix, rules...).SetPriority(e.prio))
+	return (*Matcher)(e.en.OnSuffix(suffix, rules...).SetPriority(e.prio)).AutoSetName(e)
 }
 
 // OnCommand 命令触发器
 func (e *Engine) OnCommand(commands string, rules ...zero.Rule) *Matcher {
-	return (*Matcher)(e.en.OnCommand(commands, rules...).SetPriority(e.prio))
+	return (*Matcher)(e.en.OnCommand(commands, rules...).SetPriority(e.prio)).AutoSetName(e)
 }
 
 // OnRegex 正则触发器
 func (e *Engine) OnRegex(regexPattern string, rules ...zero.Rule) *Matcher {
-	return (*Matcher)(e.en.OnRegex(regexPattern, rules...).SetPriority(e.prio))
+	return (*Matcher)(e.en.OnRegex(regexPattern, rules...).SetPriority(e.prio)).AutoSetName(e)
 }
 
 // OnKeyword 关键词触发器
 func (e *Engine) OnKeyword(keyword string, rules ...zero.Rule) *Matcher {
-	return (*Matcher)(e.en.OnKeyword(keyword, rules...).SetPriority(e.prio))
+	return (*Matcher)(e.en.OnKeyword(keyword, rules...).SetPriority(e.prio)).AutoSetName(e)
 }
 
 // OnFullMatch 完全匹配触发器
 func (e *Engine) OnFullMatch(src string, rules ...zero.Rule) *Matcher {
-	return (*Matcher)(e.en.OnFullMatch(src, rules...).SetPriority(e.prio))
+	return (*Matcher)(e.en.OnFullMatch(src, rules...).SetPriority(e.prio)).AutoSetName(e)
 }
 
 // OnFullMatchGroup 完全匹配触发器组
 func (e *Engine) OnFullMatchGroup(src []string, rules ...zero.Rule) *Matcher {
-	return (*Matcher)(e.en.OnFullMatchGroup(src, rules...).SetPriority(e.prio))
+	return (*Matcher)(e.en.OnFullMatchGroup(src, rules...).SetPriority(e.prio)).AutoSetName(e)
 }
 
 // OnKeywordGroup 关键词触发器组
 func (e *Engine) OnKeywordGroup(keywords []string, rules ...zero.Rule) *Matcher {
-	return (*Matcher)(e.en.OnKeywordGroup(keywords, rules...).SetPriority(e.prio))
+	return (*Matcher)(e.en.OnKeywordGroup(keywords, rules...).SetPriority(e.prio)).AutoSetName(e)
 }
 
 // OnCommandGroup 命令触发器组
 func (e *Engine) OnCommandGroup(commands []string, rules ...zero.Rule) *Matcher {
-	return (*Matcher)(e.en.OnCommandGroup(commands, rules...).SetPriority(e.prio))
+	return (*Matcher)(e.en.OnCommandGroup(commands, rules...).SetPriority(e.prio)).AutoSetName(e)
 }
 
 // OnPrefixGroup 前缀触发器组
 func (e *Engine) OnPrefixGroup(prefix []string, rules ...zero.Rule) *Matcher {
-	return (*Matcher)(e.en.OnPrefixGroup(prefix, rules...).SetPriority(e.prio))
+	return (*Matcher)(e.en.OnPrefixGroup(prefix, rules...).SetPriority(e.prio)).AutoSetName(e)
 }
 
 // OnSuffixGroup 后缀触发器组
 func (e *Engine) OnSuffixGroup(suffix []string, rules ...zero.Rule) *Matcher {
-	return (*Matcher)(e.en.OnSuffixGroup(suffix, rules...).SetPriority(e.prio))
+	return (*Matcher)(e.en.OnSuffixGroup(suffix, rules...).SetPriority(e.prio)).AutoSetName(e)
 }
 
 // OnShell shell命令触发器
 func (e *Engine) OnShell(command string, model any, rules ...zero.Rule) *Matcher {
-	return (*Matcher)(e.en.OnShell(command, model, rules...).SetPriority(e.prio))
+	return (*Matcher)(e.en.OnShell(command, model, rules...).SetPriority(e.prio)).AutoSetName(e)
 }

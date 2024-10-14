@@ -1,6 +1,8 @@
 package control
 
 import (
+	"fmt"
+
 	zero "github.com/wdvxdr1123/ZeroBot"
 )
 
@@ -16,4 +18,17 @@ func (m *Matcher) SetBlock(block bool) *Matcher {
 // Handle 直接处理事件
 func (m *Matcher) Handle(handler zero.Handler) {
 	_ = (*zero.Matcher)(m).Handle(handler)
+}
+
+// AutoSetName 设置 Matcher 名称
+func (m *Matcher) AutoSetName(e *Engine) *Matcher {
+	name := fmt.Sprintf("%s.%d", e.service, e.en.Count())
+	m.Name = name
+	return m
+}
+
+// SetName 设置 Matcher 名称
+func (m *Matcher) SetName(name string) *Matcher {
+	m.Name = name
+	return m
 }
