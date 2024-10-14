@@ -320,7 +320,7 @@ func init() {
 				}
 				msg := ctx.GetMessage(id)
 				ctx.Event.NativeMessage = json.RawMessage("\"" + msg.Elements.String() + "\"")
-				ctx.Event.RawMessageID = json.RawMessage(msg.MessageId.String())
+				ctx.Event.RawMessageID = json.RawMessage(msg.MessageID.String())
 				ctx.Event.RawMessage = msg.Elements.String()
 				process.SleepAbout1sTo2s() // 防止风控
 				ctx.Event.Time = time.Now().Unix()
@@ -525,7 +525,7 @@ func parseArgs(ctx *zero.Ctx) bool {
 		}
 		arr, ok := args[arg]
 		if !ok {
-			var id message.MessageID
+			var id message.ID
 			if msg == "" {
 				id = ctx.SendChain(message.At(ctx.Event.UserID), message.Text("请输入参数", arg))
 			} else {

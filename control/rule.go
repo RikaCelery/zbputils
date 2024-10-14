@@ -2,12 +2,13 @@
 package control
 
 import (
-	zero "github.com/wdvxdr1123/ZeroBot"
-	"github.com/wdvxdr1123/ZeroBot/extension"
-	"github.com/wdvxdr1123/ZeroBot/message"
 	"os"
 	"strconv"
 	"strings"
+
+	zero "github.com/wdvxdr1123/ZeroBot"
+	"github.com/wdvxdr1123/ZeroBot/extension"
+	"github.com/wdvxdr1123/ZeroBot/message"
 
 	"github.com/FloatTech/floatbox/binary"
 	"github.com/FloatTech/imgfactory"
@@ -77,7 +78,7 @@ func init() {
 			// 个人用户
 			grp = -ctx.Event.UserID
 		}
-		var msg message.MessageSegment
+		var msg message.Segment
 		switch ctx.State["command"] {
 		case "响应", "response":
 			err := managers.Response(grp)
@@ -102,7 +103,7 @@ func init() {
 	zero.OnCommandGroup([]string{
 		"全局响应", "allresponse", "全局沉默", "allsilence",
 	}, zero.SuperUserPermission, zero.OnlyToMe).SetBlock(true).SecondPriority().Handle(func(ctx *zero.Ctx) {
-		var msg message.MessageSegment
+		var msg message.Segment
 		cmd := ctx.State["command"].(string)
 		switch {
 		case strings.Contains(cmd, "响应") || strings.Contains(cmd, "response"):
