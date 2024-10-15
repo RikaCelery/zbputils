@@ -2,6 +2,7 @@
 package control
 
 import (
+	"fmt"
 	"os"
 	"strconv"
 	"strings"
@@ -379,7 +380,7 @@ func init() {
 	})
 
 	zero.OnCommandGroup([]string{
-		"改变默认启用状态", "allflip",
+		"改变默认启用状态", "allflip", "flip",
 	}, zero.SuperUserPermission, zero.OnlyToMe).SetBlock(true).SecondPriority().Handle(func(ctx *zero.Ctx) {
 		model := extension.CommandModel{}
 		_ = ctx.Parse(&model)
@@ -388,12 +389,24 @@ func init() {
 			ctx.SendChain(message.Text("没有找到指定服务!"))
 			return
 		}
+		lastState := ""
+		if service.Options.DisableOnDefault {
+			lastState = "禁用"
+		} else {
+			lastState = "启用"
+		}
 		err := service.Flip()
 		if err != nil {
 			ctx.SendChain(message.Text("ERROR: ", err))
 			return
 		}
-		ctx.SendChain(message.Text("已改变全局默认启用状态: " + model.Args))
+		currState := ""
+		if service.Options.DisableOnDefault {
+			currState = "禁用"
+		} else {
+			currState = "启用"
+		}
+		ctx.Send(fmt.Sprintf("已改变(%s)全局默认启用状态: %s => %s", model.Args, lastState, currState))
 	})
 
 	zero.OnCommandGroup([]string{"用法", "usage"}, zero.OnlyToMe).SetBlock(true).SecondPriority().
