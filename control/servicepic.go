@@ -59,9 +59,10 @@ func renderservepicof(gid int64) (img image.Image, err error) {
 	pluginlist := make([]*rendercard.PluginInfo, len(priomap))
 	ForEachByPrio(func(i int, manager *ctrl.Control[*zero.Ctx]) bool {
 		pluginlist[i] = &rendercard.PluginInfo{
-			Name:   manager.Service,
-			Brief:  manager.Options.Brief,
-			Status: manager.IsEnabledIn(gid),
+			Name:           manager.Service,
+			Brief:          manager.Options.Brief,
+			Status:         manager.IsEnabledIn(gid),
+			DisableDefault: manager.Options.DisableOnDefault,
 		}
 		return true
 	})
