@@ -21,8 +21,8 @@ github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 h1:d+Bc7a5rLufV
 github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578/go.mod h1:uGdkoq3SwY9Y+13GIhn11/XLaGBb4BfwItxLd5jeuXE=
 github.com/RikaCelery/ZeroBot v0.0.0-20241014020704-a7a4f4e62b31 h1:ZfvLozKG2yICZJXiO1+7lR6ee04VooWSLP7InaBeQtI=
 github.com/RikaCelery/ZeroBot v0.0.0-20241014020704-a7a4f4e62b31/go.mod h1:C86nQ0gIdAri4K2vg8IIQIslt08zzrKMcqYt8zhkx1M=
-github.com/RikaCelery/rendercard v0.0.0-20241015033401-3808cf8b07c4 h1:JCcShNTl+ba9Aevqjwfqk5ovQ2gRDjGVeqnqBGCLkrM=
-github.com/RikaCelery/rendercard v0.0.0-20241015033401-3808cf8b07c4/go.mod h1:Sbojcy1t3NfFz7/WicZRmR/uKFxNMYkKF8qHx69dxY0=
+github.com/RikaCelery/rendercard v0.0.0-20241015040459-3099f1c5d604 h1:Ztxp7nJfra9VlrulVQDjC5hyieHvLYivXzLZA4kIAgc=
+github.com/RikaCelery/rendercard v0.0.0-20241015040459-3099f1c5d604/go.mod h1:Sbojcy1t3NfFz7/WicZRmR/uKFxNMYkKF8qHx69dxY0=
 github.com/RomiChan/syncx v0.0.0-20240418144900-b7402ffdebc7 h1:S/ferNiehVjNaBMNNBxUjLtVmP/YWD6Yh79RfPv4ehU=
 github.com/RomiChan/syncx v0.0.0-20240418144900-b7402ffdebc7/go.mod h1:vD7Ra3Q9onRtojoY5sMCLQ7JBgjUsrXDnDKyFxqpf9w=
 github.com/RomiChan/websocket v1.4.3-0.20220227141055-9b2c6168c9c5 h1:bBmmB7he0iVN4m5mcehfheeRUEer/Avo4ujnxI3uCqs=
