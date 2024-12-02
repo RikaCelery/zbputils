@@ -4,11 +4,11 @@ go 1.20
 
 require (
 	github.com/FloatTech/ZeroBot-Plugin-Webui v1.0.1-0.20230412164529-cfe878675931
-	github.com/FloatTech/floatbox v0.0.0-20240505082030-226ec6713e14
+	github.com/FloatTech/floatbox v0.0.0-20241106130736-5aea0a935024
 	github.com/FloatTech/imgfactory v0.2.2-0.20230315152233-49741fc994f9
-	github.com/FloatTech/rendercard v0.1.2
+	github.com/FloatTech/rendercard v0.2.0
 	github.com/FloatTech/sqlite v1.7.0
-	github.com/FloatTech/zbpctrl v1.6.1
+	github.com/FloatTech/zbpctrl v1.7.0
 	github.com/RomiChan/syncx v0.0.0-20240418144900-b7402ffdebc7
 	github.com/RomiChan/websocket v1.4.3-0.20220227141055-9b2c6168c9c5
 	github.com/fumiama/cron v1.3.0
@@ -22,7 +22,7 @@ require (
 	github.com/swaggo/files v1.0.0
 	github.com/swaggo/gin-swagger v1.5.3
 	github.com/swaggo/swag v1.8.10
-	github.com/tidwall/gjson v1.17.3
+	github.com/tidwall/gjson v1.18.0
 	github.com/wdvxdr1123/ZeroBot v1.8.0
 )
 
@@ -35,11 +35,11 @@ require (
 	github.com/disintegration/imaging v1.6.2 // indirect
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/ericpauley/go-quantize v0.0.0-20200331213906-ae555eb2afa4 // indirect
-	github.com/fumiama/go-registry v0.2.6 // indirect
-	github.com/fumiama/go-simple-protobuf v0.1.0 // indirect
+	github.com/fumiama/go-registry v0.2.7 // indirect
+	github.com/fumiama/go-simple-protobuf v0.2.0 // indirect
 	github.com/fumiama/gofastTEA v0.0.10 // indirect
 	github.com/fumiama/imgsz v0.0.2 // indirect
-	github.com/fumiama/terasu v0.0.0-20240502091919-c887e26289a8 // indirect
+	github.com/fumiama/terasu v0.0.0-20241027183601-987ab91031ce // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-openapi/jsonpointer v0.19.5 // indirect
 	github.com/go-openapi/jsonreference v0.19.6 // indirect
@@ -78,9 +78,9 @@ require (
 	modernc.org/sqlite v1.33.1 // indirect
 )
 
-replace modernc.org/sqlite => github.com/fumiama/sqlite3 v1.20.0-with-win386
+replace modernc.org/sqlite => github.com/fumiama/sqlite3 v1.29.10-simp
 
-replace github.com/remyoudompheng/bigfft => github.com/fumiama/bigfft v0.0.0-20211011143303-6e0bfa3c836b
+replace modernc.org/libc => github.com/fumiama/libc v0.0.0-20240530081950-6f6d8586b5c5
 
 replace github.com/FloatTech/rendercard => github.com/RikaCelery/rendercard v0.0.0-20241015040459-3099f1c5d604
 
